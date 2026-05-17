@@ -1,0 +1,59 @@
+@model IEnumerable<Contract>
+@{ ViewData["Title"] = "Contracts"; }
+
+<h2>Contracts <a asp-action="Create" class="btn btn-primary btn-sm ms-2">+ New</a></h2>
+
+<!-- Search / Filter -->
+<form method="get" class="row g-2 mt-2 mb-3">
+    <div class="col-auto">
+        <input type="date" name="startDate" value="@ViewBag.StartDate" class="form-control" placeholder="Start Date" />
+    </div>
+    <div class="col-auto">
+        <input type="date" name="endDate" value="@ViewBag.EndDate" class="form-control" placeholder="End Date" />
+    </div>
+    <div class="col-auto">
+        <select name="status" class="form-select">
+            <option value="">-- All Statuses --</option>
+            @foreach (var s in Enum.GetValues<ContractStatus>())
+            {
+                <option value="@s" selected="@(ViewBag.Status?.ToString() == s.ToString())">@s</option>
+            }
+        </select>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-outline-primary">Filter</button>
+        <a asp-action="Index" class="btn btn-outline-secondary ms-1">Clear</a>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead><tr><th>Client</th><th>Service Level</th><th>Start</th><th>End</th><th>Status</th><th>Agreement</th><th></th></tr></thead>
+    <tbody>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.Client?.Name</td>
+            <td>@c.ServiceLevel</td>
+            <td>@c.StartDate.ToString("yyyy-MM-dd")</td>
+            <td>@c.EndDate.ToString("yyyy-MM-dd")</td>
+            <td>
+                <span class="badge bg-@(c.Status == ContractStatus.Active ? "success" : c.Status == ContractStatus.Expired ? "danger" : c.Status == ContractStatus.OnHold ? "warning" : "secondary")">
+                    @c.Status
+                </span>
+            </td>
+            <td>
+                @if (c.SignedAgreementPath != null)
+                {
+                    <a asp-action="Download" asp-route-id="@c.Id" class="btn btn-sm btn-outline-info">📄 Download</a>
+                }
+                else { <span class="text-muted">None</span> }
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@c.Id" class="btn btn-sm btn-outline-primary">View</a>
+                <a asp-action="Edit" asp-route-id="@c.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                <a asp-action="Delete" asp-route-id="@c.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

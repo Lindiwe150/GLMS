@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<div class="jumbotron p-4 bg-light rounded">
+    <h1 class="display-5">TechMove GLMS</h1>
+    <p class="lead">Global Logistics Management System — manage clients, contracts, and service requests.</p>
+</div>
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Clients</h5>
+                <a asp-controller="Client" asp-action="Index" class="btn btn-light btn-sm">Manage Clients</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Contracts</h5>
+                <a asp-controller="Contract" asp-action="Index" class="btn btn-light btn-sm">Manage Contracts</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Service Requests</h5>
+                <a asp-controller="ServiceRequest" asp-action="Index" class="btn btn-light btn-sm">Manage Requests</a>
+            </div>
+        </div>
+    </div>
+</div>

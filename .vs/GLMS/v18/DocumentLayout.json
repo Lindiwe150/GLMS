@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GLMS\\GLMS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|GLMS.Web\\GLMS.Web.csproj|c:\\glms\\glms\\glms.web\\models\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|GLMS.Web\\GLMS.Web.csproj|solutionrelative:glms.web\\models\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Contract.cs",
+              "DocumentMoniker": "C:\\GLMS\\GLMS\\GLMS.Web\\Models\\Contract.cs",
+              "RelativeDocumentMoniker": "GLMS.Web\\Models\\Contract.cs",
+              "ToolTip": "C:\\GLMS\\GLMS\\GLMS.Web\\Models\\Contract.cs",
+              "RelativeToolTip": "GLMS.Web\\Models\\Contract.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T18:15:22.876Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

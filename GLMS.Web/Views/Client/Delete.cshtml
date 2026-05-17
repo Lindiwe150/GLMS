@@ -1,0 +1,11 @@
+@model Client
+@{ ViewData["Title"] = "Delete Client"; }
+
+<h2>Delete Client</h2>
+<p>Are you sure you want to delete <strong>@Model.Name</strong>?</p>
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>

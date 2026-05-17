@@ -1,0 +1,11 @@
+@model ServiceRequest
+@{ ViewData["Title"] = "Delete Service Request"; }
+
+<h2>Delete Service Request</h2>
+<p>Delete request: <strong>@Model.Description</strong>?</p>
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>
